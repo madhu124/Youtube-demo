@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Registration</title>
+</head>
+<style>
+body {
+	background-color: pink;
+}
+
+h1 {
+	font-family: bold;
+}
+</style>
+<body>
+	<center>
+		<h1>Welcome</h1>
+	</center>
+	<form action="Customer1">
+		UserName: <input type="text" name="uname"> <br></br>
+		EmailId:<input type="email" name="email"> <br></br> 
+		<input type="submit" value="Register"> 
+		<input type="submit" value="View">
+	</form>
+</body>
+
+</html>

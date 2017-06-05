@@ -1,0 +1,99 @@
+package Student.DaoImpl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import Student.main.StudentDetails;
+import StudentDB.ConnectionManager;
+import StudentDao.StudentDAO;
+
+public class StudentDaoImpl implements StudentDAO {
+	static StudentDetails sd = new StudentDetails();
+	static Scanner sc = new Scanner(System.in);
+	static Connection con = null;
+
+	@Override
+	public void addStudent() {
+
+		System.out.println("Enter student number");
+		int sno = sc.nextInt();
+
+		System.out.println("Enter student name");
+		String sname = sc.next();
+
+		System.out.println("Enter student course");
+		String scourse = sc.next();
+
+		System.out.println("Enter student marks");
+		int smarks = sc.nextInt();
+
+		con = ConnectionManager.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement("insert into StudentNew values(?,?,?,?)");
+			ps.setInt(1, sno);
+			ps.setString(2, sname);
+			ps.setString(3, scourse);
+			ps.setInt(4, smarks);
+			int n = ps.executeUpdate();
+			if (n != 0) {
+				System.out.println("one record Inserted");
+			} else
+				System.out.println("record not inserted");
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		sd.menu();
+
+	}
+
+	@Override
+	public void editStudent() {
+		System.out.println("Enter student number");
+		int sno = sc.nextInt();
+
+		System.out.println("Enter student name");
+		String sname = sc.next();
+
+		System.out.println("Enter student course");
+		String scourse = sc.next();
+
+		System.out.println("Enter student marks");
+		int smarks = sc.nextInt();
+		con = ConnectionManager.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement("insert into StudentNew values(?,?,?,?)");
+			ps.setInt(1, sno);
+			ps.setString(2, sname);
+			ps.setString(3, scourse);
+			ps.setInt(4, smarks);
+			int n = ps.executeUpdate();
+			if (n != 0) {
+				System.out.println("one record Inserted");
+			} else
+				System.out.println("record not inserted");
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public void deleteStudent() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void viewStudent() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

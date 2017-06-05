@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MyWebAppli</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+ <servlet>
+ <servlet-name>helloServlet</servlet-name>
+  <servlet-class>Servlets.MyFirstServlet</servlet-class>
+   <init-param>
+  <param-name>EmailId</param-name>
+  <param-value>Thanks For Registering</param-value>
+  </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+   <servlet-name>helloServlet</servlet-name>
+  <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+  <servlet-name>WelcomeServlet</servlet-name>
+  <servlet-class>Servlets.WelcomeClass</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>WelcomeServlet</servlet-name>
+  <url-pattern>/welcome</url-pattern>
+  </servlet-mapping>
+ 
+   <servlet>
+  <servlet-name>GlobalSolutions</servlet-name>
+  <servlet-class>Servlets.TestSerandHtml</servlet-class>
+  <init-param>
+  <param-name>Email</param-name>
+  <param-value>neerukondavakula@gmail.com</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>GlobalSolutions</servlet-name>
+  <url-pattern>/Global</url-pattern>
+  </servlet-mapping>
+ 
+  
+  
+ <context-param>
+  <param-name>dbUrl</param-name>
+  <param-value>localhost:1521:xe</param-value>
+  </context-param>
+  
+  
+  
+</web-app>

@@ -1,0 +1,11 @@
+
+<%-- out object,--%>
+<% 
+out.println("welcome");
+response.sendRedirect("www.google.com") ;
+
+%>
+<%= " <br> welcome "+ request.getParameter("uname")
+
+
+%>

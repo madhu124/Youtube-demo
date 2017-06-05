@@ -1,0 +1,9 @@
+
+Mar 23, 2017 16:08:16.20 NEW SESSION
+Mar 23, 2017 16:08:16.20 [1596:9588:0323/160816.196:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+
+Mar 24, 2017 11:24:46.32 NEW SESSION
+Mar 24, 2017 11:24:46.32 [8500:8504:0324/112446.279:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+
+May 31, 2017 22:13:53.85 NEW SESSION
+May 31, 2017 22:13:54.09 [11804:13652:0531/221352.699:ERROR:connection_factory_impl.cc(386)] Failed to connect to MCS endpoint with error -21

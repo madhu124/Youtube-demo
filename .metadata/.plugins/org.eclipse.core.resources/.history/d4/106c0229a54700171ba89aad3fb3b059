@@ -1,0 +1,21 @@
+
+<%-- out object,--%>
+<% 
+out.println("welcome");
+String driver=config.getInitParameter("dname");
+out.println("<br> driver is "+driver);
+
+
+%>
+<%= " <br> welcome "+ request.getParameter("uname")
+
+%>
+
+
+<%-- response
+<%
+
+String name=request.getParameter("uname");
+if(name.equals("vakula")){
+response.sendRedirect("https://www.google.co.in/webhp?hl=en&tab=ww&gws_rd=ssl") ;} %>
+--%>

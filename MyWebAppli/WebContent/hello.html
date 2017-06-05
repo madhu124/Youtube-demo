@@ -1,0 +1,31 @@
+<html>
+<head><title> hello...</head></title>
+<script>
+function validate(){
+var IdObj=document.getElementById("userid");
+var idvalue=IdObj.value;
+
+var passObj=document.getElementById("pwd");
+var passvalue=passObj.value;
+
+if(idvalue == "" || passvalue == ""){
+	alert("enter userid and password");
+	return false;
+}
+return true;
+}
+</script>
+<body>
+<h1>hello...</h1>
+<form action="hello" method="post">
+Enter UserId:<input type="text" name="userid" id="userid"/>
+<br/><br/>
+Enter password:<input type="password" name="pwd" id="pwd" />
+<br/><br/>
+
+<input type="submit" value="Log In" onClick =" return validate()"/>
+</form>
+</body>
+
+
+</html>

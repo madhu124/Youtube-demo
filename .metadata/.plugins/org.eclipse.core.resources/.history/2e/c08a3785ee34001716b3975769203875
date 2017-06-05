@@ -1,0 +1,173 @@
+package Vakula.DaoImpl;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import Vakula.Student.Student;
+import Vakula.StudentDao.StudentDAo;
+import Vakula.main.StudentManag;
+
+public class StudentDAoImpl implements StudentDAo {
+	static Scanner sc = new Scanner(System.in);
+
+	@Override
+	public void addStudent() {
+		try {
+			
+			boolean flag= true;
+			ArrayList<Student> students= new ArrayList<Student>();
+			FileOutputStream fos = new FileOutputStream("student.txt");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			System.out.println("Enter Student Number");
+			int sno = sc.nextInt();
+			System.out.println("Enter Student Name");
+			String name = sc.next();
+			System.out.println("Enter Course Name");
+			String cname = sc.next();
+			System.out.println("Enter course fee");
+			double fee = sc.nextDouble();
+			Student s = new Student(sno, name, cname, fee);
+			students.add(s);
+			System.out.println("Do you want more records press 1 else type any number ?");
+			int choice=sc.nextInt();
+			if(choice==1){
+				flag = true;
+			}
+			else{
+				flag= false;
+			}
+			oos.writeObject(students);
+			System.out.println("Student Object Writing completed");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void editStudent(int sno1) {
+		// TODO Auto-generated method stub
+	try {
+		File f1 = new File("student.txt");
+		ObjectInputStream ois= new ObjectInputStream(new FileInputStream(f1));
+		List<Student> students = (List<Student>) ois.readObject();
+	    Iterator it = students.iterator();
+	while(it.hasNext()){
+		Student s = (Student) it.next();
+		if(s.sno== sno1){
+			s.setSno(sno1);
+			System.out.println("Enter student name");
+		    String name= sc.next();
+		    s.setSname(name);
+		    System.out.println("Enter Student course");
+		    String cname= sc.next();
+		    s.setCourse(cname);
+		    System.out.println("Enter student fee");
+		    double sfee= sc.nextDouble();
+		    s.setFees(sfee);
+		    students.add(s);
+		}
+	
+		else{
+			students.add(s);
+		}
+	
+	}
+	
+	ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f1));
+	oos.writeObject(students);
+	System.out.println("Student record updated");
+	
+	
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+
+
+
+
+
+
+
+	}
+
+	@Override
+	public void deleteStudent(int sno) {
+		// TODO Auto-generated method stub
+
+		try {
+			File f1 = new File("student.txt");
+			File f2 = null;
+			FileInputStream fis = new FileInputStream(f1);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			Student s1 = (Student) ois.readObject();
+			if (s1.sno == sno) {
+
+				System.out.println("record deleted");
+			} else {
+
+				f2 = new File("temp.txt");
+				FileOutputStream fos = new FileOutputStream(f2);
+				ObjectOutputStream oos = new ObjectOutputStream(fos);
+				oos.writeObject(s1);
+			}
+			f2.delete();
+			f2.renameTo(f1);
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public void viewStudent(int sno) {
+
+		try {
+			FileInputStream fis = new FileInputStream("student.txt");
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			Student s1 = (Student) ois.readObject();
+			if (sno == s1.sno) {
+				System.out.println(s1);
+			}
+
+			StudentManag.main(null);
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

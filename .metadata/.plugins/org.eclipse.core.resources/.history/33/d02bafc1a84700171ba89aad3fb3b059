@@ -1,0 +1,5 @@
+<%
+String name=(String)session.getAttribute("dname");
+out.println("session driver name is "+name);
+
+%>

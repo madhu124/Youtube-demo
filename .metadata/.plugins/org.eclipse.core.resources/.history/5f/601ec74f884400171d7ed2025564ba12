@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Registration Application</title>
+</head>
+<body>
+	<center>
+		<h1>
+			<u>STUDENT REGISTRATION</u>
+		</h1>
+	</center>
+	<form action="register" method="post">
+		<table border="4" align="center">
+			<tr>
+				<td>Student Number</td>
+				<td><input type="text" name="sno"></td>
+			</tr>
+			<td>Student Name</td>
+
+			<td><input type="text" name="sname"/></td>
+			</tr>
+<tr>
+			<td><input type="submit" value="Register" /></td>
+			<td><input type="reset" value="Reset" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

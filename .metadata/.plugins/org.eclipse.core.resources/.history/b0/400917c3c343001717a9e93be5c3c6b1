@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title> Student Registration Application</title>
+</head>
+<body>
+<center><h1><u>STUENT REGISTRATION</u></h1></center>
+<form action="./register" method="post"></form>
+Student Number <input type= "text" name="sno">
+<br><br>
+Student Name<input type="text" name="sname"><br><br>
+<input type="submit" value="Register"/>
+<input type="reset" value="Reset"/>
+
+</body>
+</html>

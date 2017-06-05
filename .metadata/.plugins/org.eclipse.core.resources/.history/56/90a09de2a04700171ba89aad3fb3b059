@@ -1,0 +1,6 @@
+
+<%-- out object,--%>
+<% 
+out.println("welcome");
+%>
+<%= "welcome"+ request.getParameter("uname") %>

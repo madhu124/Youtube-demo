@@ -1,0 +1,16 @@
+
+<%-- out object,--%>
+<% 
+out.println("welcome");
+
+
+%>
+<%= " <br> welcome "+ request.getParameter("uname")
+
+
+%>
+<%
+
+String name=request.getParameter("uname");
+if(name.equals("vakula")){
+response.sendRedirect("https://www.google.co.in/webhp?hl=en&tab=ww&gws_rd=ssl") ;} %>

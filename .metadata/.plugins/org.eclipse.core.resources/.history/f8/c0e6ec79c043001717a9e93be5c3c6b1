@@ -1,0 +1,31 @@
+package Student.DaoImpl;
+
+import StudentDao.CourseDAO;
+
+public class CourseDAOImpl implements CourseDAO{
+
+	@Override
+	public void addCourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editCourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteCourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viewCourse() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
