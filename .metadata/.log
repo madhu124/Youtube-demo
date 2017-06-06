@@ -9852,3 +9852,13 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !ENTRY org.eclipse.core.net 4 0 2017-06-05 12:49:29.125
 !MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'The Proxy Auto-configuration URL was not found.
 ' #12180.
+
+!ENTRY org.eclipse.core.resources 2 2 2017-06-05 22:23:49.014
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2017-06-05 22:23:49.014
+!MESSAGE The project description file (.project) for 'Gitproject' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.core.resources 2 2 2017-06-05 22:30:05.600
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2017-06-05 22:30:05.600
+!MESSAGE The project description file (.project) for 'Welcome' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
